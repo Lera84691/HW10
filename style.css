@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: rgb(255, 255, 255);
+    width: 800px;
+    height: 500px;
+    top: 250px;
+    overflow: hidden;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mountains {
+    width: 0;
+    height: 0;
+    border-left: 190px solid transparent;
+    border-right: 190px solid transparent;
+    border-bottom: 160px solid #3782be;
+    left: 210px;
+    bottom: 0;
+}
+
+.mountains::before {
+    left: -85px;
+    bottom: -160px;
+    border-left: 220px solid transparent;
+    border-right: 220px solid transparent;
+    border-bottom: 220px solid #3782be;
+}
+
+.mountains::after {
+    right: -40px;
+    bottom: -160px;
+    border-left: 180px solid transparent;
+    border-right: 220px solid transparent;
+    border-bottom: 220px solid #3782be;
+}
+
+
+.sun {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(221, 189, 9);
+    border-radius: 50%;
+    top: 300px;
+    left: 390px;
+    animation-name: color;
+    animation-duration: 9s;
+    transition-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.cloud_one,
+.cloud_one::before,
+.cloud_one::after,
+.cloud_two,
+.cloud_two::before,
+.cloud_two::after,
+.cloud_three,
+.cloud_three::before,
+.cloud_three::after,
+.cloud_four,
+.cloud_four::before,
+.cloud_four::after {
+    background-color: rgb(223, 223, 223);
+}
+
+.cloud_one,
+.cloud_one::before,
+.cloud_one::after,
+.cloud_two,
+.cloud_two::before,
+.cloud_two::after,
+.cloud_three,
+.cloud_three::before,
+.cloud_three::after,
+.cloud_four,
+.cloud_four::before,
+.cloud_four::after,
+.mountains,
+.mountains::before,
+.mountains::after,
+.sun {
+    position: absolute;
+    content: "";
+}
+
+.cloud_one,
+.cloud_two,
+.cloud_three,
+.cloud_four {
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+.cloud_one {
+    width: 160px;
+    height: 50px;
+    border-radius: 40px;
+    top: 240px;
+    animation-name: clouds;
+    animation-duration: 6s;
+    transition-timing-function: ease;
+}
+
+.cloud_one::before {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    top: -40px;
+    left: 20px;
+}
+
+.cloud_one::after {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top: -27px;
+    right: 23px;
+}
+
+.cloud_two {
+    width: 160px;
+    height: 50px;
+    border-radius: 40px;
+    top: 240px;
+    animation-name: clouds;
+    animation-duration: 8s;
+    transition-timing-function: linear;
+}
+
+.cloud_two::before {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    top: -40px;
+    left: 20px;
+}
+
+.cloud_two::after {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    top: -30px;
+    right: 25px;
+}
+
+
+.cloud_three {
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    top: 240px;
+    animation-name: clouds;
+    animation-duration: 6s;
+    transition-timing-function: ease-in;
+}
+
+.cloud_three::before {
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    top: -22px;
+    right: 17px;
+}
+
+.cloud_three::after {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    top: -35px;
+    left: 20px;
+}
+
+.cloud_four {
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    top: 240px;
+    animation-name: clouds;
+    animation-duration: 10s;
+    transition-timing-function: ease-in-out;
+}
+
+.cloud_four::before {
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    top: -25px;
+    right: 20px;
+}
+
+.cloud_four::after {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    top: -35px;
+    left: 20px;
+}
+
+@keyframes color {
+    0% {
+        top: 270px;
+        background-color: transparent;
+    }
+
+    5% {
+        top: 270px;
+        background-color: transparent;
+    }
+
+    10% {
+        background-color: rgb(223, 114, 12);
+    }
+
+    25% {
+        background-color: rgb(221, 189, 9);
+    }
+
+    70% {
+        background-color: rgb(255, 226, 64);
+    }
+
+    100% {
+        top: -150px;
+        background-color: rgb(221, 189, 9);
+    }
+}
+
+
+@keyframes clouds {
+    0% {
+        left: -150px;
+        background-color: transparent;
+    }
+
+    20% {
+        left: -75px;
+        background-color: rgb(223, 223, 223);
+    }
+
+    100% {
+        left: 700px;
+        background-color: rgb(223, 223, 223);
+    }
+}
